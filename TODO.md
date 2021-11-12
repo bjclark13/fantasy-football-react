@@ -6,3 +6,7 @@
 - Create a component called Players.tsx that    
     - Contains an array of objects representing the players.
     - Returns <Player /> for each player in the arrausing `.map()`
+
+```
+
+```
