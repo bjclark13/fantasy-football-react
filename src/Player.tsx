@@ -1,7 +1,14 @@
 import { useState } from 'react';
 import './Player.css';
 
-function Player({ name, starting, position }: { name: string, starting: boolean, position: string }) {
+interface PlayerProps {
+    name: string,
+    starting: boolean,
+    position: string,
+    onDelete: () => void
+}
+
+function Player({ name, starting, position, onDelete }: PlayerProps) {
 
     const [startingState, setStarting] = useState(starting);
 
@@ -15,7 +22,10 @@ function Player({ name, starting, position }: { name: string, starting: boolean,
             <h3>{position}</h3>
             <h3>{startingState ? '' : 'Not'} Starting </h3>
 
-            <button onClick={toggleStarting}> {startingState ? 'Bench' : 'Start'} Player </button>
+            <p>
+                <button onClick={toggleStarting}> {startingState ? 'Bench' : 'Start'} Player </button>
+            </p>
+            <button onClick={onDelete}> Drop Player </button>
         </div>
     )
 }
