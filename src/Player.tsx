@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import './Player.css';
 
+import { Link } from 'react-router-dom';
+
 interface PlayerProps {
     name: string,
     starting: boolean,
@@ -26,6 +28,7 @@ function Player({ name, starting, position, onDelete }: PlayerProps) {
                 <button onClick={toggleStarting}> {startingState ? 'Bench' : 'Start'} Player </button>
             </p>
             <button onClick={onDelete}> Drop Player </button>
+            <Link to={name}> More Details </Link>
         </div>
     )
 }
