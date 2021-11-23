@@ -20,6 +20,7 @@ function Players() {
                 />
             })}
 
+
             <PlayerAdd onAdd={addPlayer} />
         </div>
     )
